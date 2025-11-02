@@ -23,10 +23,10 @@ class ProcessController(BaseController):
         )
 
         if file_ext == ProcessingEnum.TXT.value:
-            return TextLoader(file_path,encoding='utf-8')
+            return TextLoader(file_path)
         
         if file_ext == ProcessingEnum.PDF.value:
-            return PyMuPDFLoader(file_path,encoding='utf-8')
+            return PyMuPDFLoader(file_path)
 
         return None
     

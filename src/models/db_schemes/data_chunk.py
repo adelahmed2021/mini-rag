@@ -8,6 +8,7 @@ class DataChunk(BaseModel):
     chunk_metadata: Dict[str, Any]
     chunk_order: int = Field(..., gt=0)
     chunk_project_id: ObjectId
+    chunk_asset_id: ObjectId
 
     @classmethod
     def get_indexes(cls):

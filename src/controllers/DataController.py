@@ -11,7 +11,7 @@ class DataController(BaseController):
         self.size_scale = 1048567 #convert MB to bytes
     
     def validata_uploaded_file(self,file: UploadFile):
-        if file.content_type not in self.app_settings.FILE_ALLOWED_TYPES.split(','):
+        if file.content_type not in self.app_settings.FILE_ALLOWED_TYPES:
             return False,ResponseSignal.FILE_TYPE_NOT_SUPPORTED.value
 
         if file.size > self.app_settings.FILE_MAX_SIZE * self.size_scale:
